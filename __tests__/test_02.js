@@ -6,7 +6,7 @@ jest.setTimeout(10000);
 
 jest.mock('../src/js/readGameSaving');
 
-test('Mock = error', () => {
+test('Mocking of readGameSaving = error', () => {
   readGameSaving.mockRejectedValue('ERROR');
 
   return GameSavingLoader.load().catch(err => expect(String(err)).toMatch('ERROR'));
